@@ -1,0 +1,1525 @@
+
+@import "tailwindcss";
+
+:root {
+  --primary: #2563eb;
+  --primary-hover: #1d4ed8;
+  --ink: #172033;
+  --muted: #526078;
+  --border: #e0e6ef;
+  --canvas: #f8faff;
+  --surface: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+}
+
+body {
+  margin: 0;
+  background: var(--canvas);
+  color: var(--ink);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+button,
+select {
+  font: inherit;
+}
+
+button,
+a,
+select,
+input {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+:focus-visible {
+  outline: 3px solid var(--primary);
+  outline-offset: 3px;
+}
+
+.skip-link {
+  position: fixed;
+  top: 12px;
+  left: 12px;
+  z-index: 100;
+  padding: 12px 16px;
+  transform: translateY(-160%);
+  border-radius: 8px;
+  background: var(--primary);
+  color: white;
+  font-weight: 700;
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  border-bottom: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.97);
+}
+
+.nav-container {
+  width: min(1200px, calc(100% - 48px));
+  min-height: 78px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  flex-shrink: 0;
+}
+
+.brand-mark {
+  display: grid;
+  width: 43px;
+  height: 43px;
+  place-items: center;
+  border-radius: 12px;
+  background: #eaf0ff;
+  color: var(--primary);
+}
+
+.brand-name,
+.brand-tagline {
+  display: block;
+}
+
+.brand-name {
+  font-size: 19px;
+  font-weight: 800;
+  letter-spacing: -0.7px;
+  line-height: 1.3;
+}
+
+.brand-tagline {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.desktop-nav {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.desktop-nav a {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  padding: 9px 13px;
+  border-radius: 8px;
+  color: #465168;
+  font-size: 14px;
+}
+
+.desktop-nav a:hover,
+.desktop-nav .nav-active {
+  background: #edf2ff;
+  color: var(--primary);
+}
+
+.nav-settings {
+  display: inline-flex;
+  min-height: 46px;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  padding: 10px 15px;
+  border: 1px solid #dbe4fa;
+  border-radius: 9px;
+  background: #f1f5ff;
+  color: #173f9c;
+  font-size: 14px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.section-container {
+  width: min(1200px, calc(100% - 48px));
+  margin-inline: auto;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+  gap: 70px;
+  padding-top: 90px;
+  padding-bottom: 96px;
+}
+
+.hero-copy {
+  max-width: 600px;
+}
+
+.eyebrow,
+.section-kicker {
+  display: inline-block;
+  color: var(--primary);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 1.1px;
+}
+
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.eyebrow-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--primary);
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: clamp(46px, 5vw, 68px);
+  font-weight: 800;
+  letter-spacing: -3px;
+  line-height: 1.08;
+}
+
+.hero h1 span {
+  color: var(--primary);
+}
+
+.hero-description {
+  max-width: 520px;
+  margin: 24px 0 0;
+  color: var(--muted);
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 13px;
+  margin-top: 30px;
+}
+
+.button-primary,
+.button-secondary {
+  display: inline-flex;
+  min-height: 50px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px 19px;
+  border: 1px solid transparent;
+  border-radius: 9px;
+  font-size: 15px;
+  font-weight: 700;
+  transition: background-color 150ms ease, border-color 150ms ease;
+}
+
+.button-primary {
+  background: var(--primary);
+  color: white;
+}
+
+.button-primary:hover {
+  background: var(--primary-hover);
+}
+
+.button-secondary {
+  border-color: var(--border);
+  background: white;
+  color: var(--ink);
+}
+
+.button-secondary:hover {
+  background: #f0f4fb;
+}
+
+.hero-note {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 25px;
+  color: #40516b;
+  font-size: 14px;
+}
+
+.hero-note svg {
+  color: #16834a;
+}
+
+.lesson-preview {
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  background: white;
+  box-shadow: 0 15px 45px rgba(24, 43, 79, 0.08);
+}
+
+.preview-top,
+.preview-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 20px 23px;
+}
+
+.preview-label {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+}
+
+.preview-number {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.preview-illustration {
+  display: grid;
+  min-height: 260px;
+  place-items: center;
+  margin: 0 20px;
+  border: 1px solid #dce5fa;
+  border-radius: 13px;
+  background:
+    radial-gradient(circle at 80% 15%, #dfe7ff 0, transparent 35%),
+    linear-gradient(145deg, #f4f7ff, #eaf0ff);
+}
+
+.fraction-visual {
+  display: flex;
+  align-items: center;
+  gap: 27px;
+  padding: 20px;
+}
+
+.fraction-circle {
+  position: relative;
+  width: 126px;
+  height: 126px;
+  overflow: hidden;
+  flex-shrink: 0;
+  border: 3px solid #264eaa;
+  border-radius: 50%;
+  background: white;
+}
+
+.fraction-half {
+  position: absolute;
+  inset: 0 0 0 50%;
+  background: #497af0;
+}
+
+.fraction-circle::after {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 3px;
+  background: #264eaa;
+  content: "";
+}
+
+.visual-overline {
+  color: var(--primary);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.visual-title {
+  max-width: 210px;
+  margin: 9px 0;
+  font-size: 22px;
+  font-weight: 800;
+  line-height: 1.3;
+}
+
+.visual-caption {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.preview-bottom {
+  justify-content: flex-start;
+  padding-top: 19px;
+  padding-bottom: 21px;
+}
+
+.preview-icon {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  place-items: center;
+  border-radius: 11px;
+  background: #edf2ff;
+  color: var(--primary);
+}
+
+.preview-text {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+.preview-text strong {
+  font-size: 14px;
+}
+
+.preview-text span {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.preview-book {
+  color: var(--primary);
+}
+
+.format-section {
+  padding-top: 20px;
+  padding-bottom: 95px;
+}
+
+.section-heading {
+  max-width: 700px;
+  margin-bottom: 32px;
+}
+
+.section-heading h2,
+.continue-section h2 {
+  margin: 10px 0 0;
+  font-size: clamp(30px, 3vw, 40px);
+  font-weight: 800;
+  letter-spacing: -1.3px;
+  line-height: 1.25;
+}
+
+.section-heading > p,
+.continue-section p {
+  margin: 12px 0 0;
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.format-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.format-card {
+  position: relative;
+  display: flex;
+  min-height: 218px;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 23px;
+  border: 1px solid var(--border);
+  border-radius: 13px;
+  background: white;
+  color: var(--ink);
+  text-align: left;
+}
+
+.format-card:hover {
+  border-color: #93adef;
+}
+
+.format-selected {
+  border: 2px solid var(--primary);
+  padding: 22px;
+  background: #f6f8ff;
+}
+
+.format-icon,
+.feature-icon {
+  display: grid;
+  width: 46px;
+  height: 46px;
+  flex-shrink: 0;
+  place-items: center;
+  border-radius: 11px;
+  background: #edf2ff;
+  color: var(--primary);
+}
+
+.format-title {
+  margin-top: 19px;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.format-description {
+  margin-top: 7px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.selected-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 15px;
+  color: var(--primary);
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.selection-status {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.how-section {
+  padding: 82px 0 90px;
+  border-block: 1px solid var(--border);
+  background: white;
+}
+
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 40px;
+}
+
+.step {
+  padding-top: 20px;
+  border-top: 2px solid #dce5fa;
+}
+
+.step-number {
+  color: var(--primary);
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.step h3,
+.feature-item h3,
+.subject-card h3 {
+  margin: 17px 0 7px;
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: -0.3px;
+}
+
+.step p,
+.feature-item p,
+.subject-card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.features-section {
+  padding-top: 90px;
+  padding-bottom: 90px;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 36px 45px;
+}
+
+.feature-item {
+  padding: 8px 0;
+}
+
+.feature-icon {
+  width: 43px;
+  height: 43px;
+}
+
+.feature-item h3 {
+  margin-top: 17px;
+  font-size: 18px;
+}
+
+.settings-panel {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 22px;
+  margin-top: 55px;
+  padding: 25px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: white;
+}
+
+.settings-intro {
+  flex: 1 1 220px;
+}
+
+.settings-intro h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.settings-intro p {
+  margin: 5px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.setting-control {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.setting-control label {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.setting-control select {
+  min-height: 44px;
+  padding: 7px 10px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  background: white;
+  color: var(--ink);
+}
+
+.toggle-control {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  min-height: 44px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.toggle-control input {
+  width: 19px;
+  height: 19px;
+  accent-color: var(--primary);
+}
+
+.reset-button {
+  min-height: 44px;
+  padding: 8px 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: white;
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.subjects-section {
+  padding: 85px 0 95px;
+  border-block: 1px solid var(--border);
+  background: #f0f4ff;
+}
+
+.subjects-heading {
+  display: flex;
+  max-width: none;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.subjects-heading > p {
+  max-width: 300px;
+}
+
+.subjects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.subject-card {
+  display: flex;
+  min-height: 250px;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 25px;
+  border: 1px solid #dfe6f3;
+  border-radius: 13px;
+  background: white;
+}
+
+.subject-number {
+  color: var(--primary);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.subject-card h3 {
+  margin-top: 13px;
+}
+
+.subject-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: auto;
+  padding-top: 20px;
+  color: var(--primary);
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.subject-link:hover {
+  text-decoration: underline;
+}
+
+.continue-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  padding-top: 80px;
+  padding-bottom: 85px;
+}
+
+.continue-section > div {
+  max-width: 700px;
+}
+
+.site-footer {
+  border-top: 1px solid var(--border);
+  background: white;
+}
+
+.footer-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px 24px;
+  padding-top: 26px;
+  padding-bottom: 26px;
+}
+
+.footer-brand {
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.footer-inner p,
+.footer-inner span {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.text-size-large {
+  font-size: 18px;
+}
+
+.text-size-extra-large {
+  font-size: 20px;
+}
+
+.high-contrast {
+  --ink: #000000;
+  --muted: #263247;
+  --border: #657085;
+  --canvas: #ffffff;
+  --surface: #ffffff;
+  background: white !important;
+  color: black !important;
+}
+
+.high-contrast .hero-description,
+.high-contrast .section-heading > p,
+.high-contrast .step p,
+.high-contrast .feature-item p,
+.high-contrast .subject-card p {
+  color: #263247;
+}
+
+.high-contrast .format-card,
+.high-contrast .subject-card,
+.high-contrast .settings-panel,
+.high-contrast .lesson-preview {
+  border-color: #263247;
+}
+
+.reduce-motion *,
+.reduce-motion *::before,
+.reduce-motion *::after {
+  scroll-behavior: auto !important;
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.01ms !important;
+}
+
+@media (max-width: 1050px) {
+  .nav-container {
+    gap: 12px;
+  }
+
+  .desktop-nav {
+    gap: 0;
+  }
+
+  .desktop-nav a {
+    padding-inline: 9px;
+    font-size: 13px;
+  }
+
+  .hero {
+    gap: 35px;
+  }
+
+  .format-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  .nav-container,
+  .section-container {
+    width: calc(100% - 36px);
+  }
+
+  .nav-container {
+    min-height: 70px;
+  }
+
+  .desktop-nav {
+    display: none;
+  }
+
+  .nav-settings {
+    min-height: 44px;
+    padding: 9px 11px;
+  }
+
+  .nav-settings span {
+    display: none;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 35px;
+    padding-top: 58px;
+    padding-bottom: 65px;
+  }
+
+  .hero h1 {
+    font-size: clamp(43px, 10vw, 60px);
+    letter-spacing: -2px;
+  }
+
+  .hero-description {
+    font-size: 17px;
+  }
+
+  .lesson-preview {
+    max-width: 540px;
+  }
+
+  .format-section,
+  .features-section {
+    padding-top: 65px;
+    padding-bottom: 65px;
+  }
+
+  .how-section,
+  .subjects-section {
+    padding-top: 65px;
+    padding-bottom: 65px;
+  }
+
+  .steps-grid,
+  .features-grid,
+  .subjects-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 25px;
+  }
+
+  .subjects-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .continue-section {
+    align-items: flex-start;
+    flex-direction: column;
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  .settings-panel {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .settings-intro,
+  .setting-control {
+    width: 100%;
+  }
+
+  .setting-control select {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .brand-tagline {
+    font-size: 11px;
+  }
+
+  .brand-name {
+    font-size: 17px;
+  }
+
+  .hero-actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .hero-actions a,
+  .hero-actions button {
+    width: 100%;
+  }
+
+  .fraction-visual {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .preview-illustration {
+    padding: 10px;
+  }
+
+  .format-grid,
+  .steps-grid,
+  .features-grid,
+  .subjects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .format-card {
+    min-height: 185px;
+  }
+
+  .section-heading h2,
+  .continue-section h2 {
+    font-size: 30px;
+    letter-spacing: -0.8px;
+  }
+
+  .footer-inner {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+/* ACCESSLEARN GLOBAL ACCESSIBILITY */
+
+/* Global text scaling */
+html.accessibility-text-large {
+  font-size: 112.5%;
+}
+
+html.accessibility-text-extra-large {
+  font-size: 125%;
+}
+
+/* High contrast */
+html.accessibility-high-contrast body {
+  background: #000 !important;
+  color: #fff !important;
+}
+
+html.accessibility-high-contrast main,
+html.accessibility-high-contrast section,
+html.accessibility-high-contrast article,
+html.accessibility-high-contrast header,
+html.accessibility-high-contrast footer,
+html.accessibility-high-contrast nav,
+html.accessibility-high-contrast aside {
+  background-color: #000 !important;
+  color: #fff !important;
+  border-color: #fff !important;
+}
+
+html.accessibility-high-contrast h1,
+html.accessibility-high-contrast h2,
+html.accessibility-high-contrast h3,
+html.accessibility-high-contrast h4,
+html.accessibility-high-contrast p,
+html.accessibility-high-contrast span,
+html.accessibility-high-contrast label,
+html.accessibility-high-contrast li {
+  color: #fff !important;
+}
+
+html.accessibility-high-contrast a {
+  color: #ffeb3b !important;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+html.accessibility-high-contrast button {
+  border: 2px solid #fff !important;
+}
+
+html.accessibility-high-contrast input,
+html.accessibility-high-contrast textarea,
+html.accessibility-high-contrast select {
+  background: #000 !important;
+  color: #fff !important;
+  border: 2px solid #fff !important;
+}
+
+html.accessibility-high-contrast input::placeholder,
+html.accessibility-high-contrast textarea::placeholder {
+  color: #ddd !important;
+}
+
+html.accessibility-high-contrast :focus-visible {
+  outline: 3px solid #ffeb3b !important;
+  outline-offset: 4px !important;
+}
+
+/* Reduced motion */
+html.accessibility-reduced-motion *,
+html.accessibility-reduced-motion *::before,
+html.accessibility-reduced-motion *::after {
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.01ms !important;
+  scroll-behavior: auto !important;
+}
+
+/* Keyboard focus */
+:focus-visible {
+  outline: 3px solid #2563eb;
+  outline-offset: 3px;
+}
+
+/* Keyboard skip link */
+.skip-to-content {
+  position: absolute;
+  top: -100px;
+  left: 16px;
+  z-index: 9999;
+  padding: 12px 16px;
+  background: #fff;
+  color: #000;
+  border: 2px solid currentColor;
+}
+
+.skip-to-content:focus {
+  top: 16px;
+}
+/* ACCESSLEARN GLOBAL TEXT SCALING */
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+}
+
+html.accessibility-text-large {
+  zoom: 1.125;
+}
+
+html.accessibility-text-extra-large {
+  zoom: 1.25;
+}
+
+/* GLOBAL HIGH CONTRAST */
+html.accessibility-high-contrast body {
+  background: #000 !important;
+  color: #fff !important;
+}
+
+html.accessibility-high-contrast a {
+  color: #ffeb3b !important;
+  text-decoration: underline;
+}
+
+html.accessibility-high-contrast :focus-visible {
+  outline: 3px solid #ffeb3b !important;
+  outline-offset: 4px !important;
+}
+
+/* GLOBAL REDUCED MOTION */
+html.accessibility-reduced-motion *,
+html.accessibility-reduced-motion *::before,
+html.accessibility-reduced-motion *::after {
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.01ms !important;
+  scroll-behavior: auto !important;
+}
+
+/* KEYBOARD FOCUS */
+:focus-visible {
+  outline: 3px solid #2563eb;
+  outline-offset: 3px;
+}
+/* ==========================================
+   ACCESSLEARN GLOBAL ACCESSIBILITY
+   ========================================== */
+
+/* Scale the entire interface consistently */
+html {
+  zoom: 1;
+}
+
+html.accessibility-text-large {
+  zoom: 1.125;
+}
+
+html.accessibility-text-extra-large {
+  zoom: 1.25;
+}
+
+/* High contrast */
+html.accessibility-high-contrast body {
+  background: #000 !important;
+  color: #fff !important;
+}
+
+html.accessibility-high-contrast main,
+html.accessibility-high-contrast section,
+html.accessibility-high-contrast article,
+html.accessibility-high-contrast header,
+html.accessibility-high-contrast footer,
+html.accessibility-high-contrast nav,
+html.accessibility-high-contrast aside {
+  background-color: #000 !important;
+  color: #fff !important;
+  border-color: #fff !important;
+}
+
+html.accessibility-high-contrast h1,
+html.accessibility-high-contrast h2,
+html.accessibility-high-contrast h3,
+html.accessibility-high-contrast h4,
+html.accessibility-high-contrast p,
+html.accessibility-high-contrast span,
+html.accessibility-high-contrast label,
+html.accessibility-high-contrast li {
+  color: #fff !important;
+}
+
+html.accessibility-high-contrast a {
+  color: #ffeb3b !important;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+html.accessibility-high-contrast button {
+  border-color: #fff !important;
+}
+
+html.accessibility-high-contrast input,
+html.accessibility-high-contrast textarea,
+html.accessibility-high-contrast select {
+  background: #000 !important;
+  color: #fff !important;
+  border: 2px solid #fff !important;
+}
+
+html.accessibility-high-contrast :focus-visible {
+  outline: 3px solid #ffeb3b !important;
+  outline-offset: 4px !important;
+}
+
+/* Reduced motion */
+html.accessibility-reduced-motion *,
+html.accessibility-reduced-motion *::before,
+html.accessibility-reduced-motion *::after {
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.01ms !important;
+  scroll-behavior: auto !important;
+}
+
+/* Keyboard focus */
+:focus-visible {
+  outline: 3px solid #2563eb;
+  outline-offset: 3px;
+}
+/* ==========================================
+   ACCESSLEARN HIGH CONTRAST FIX
+   ========================================== */
+
+html.accessibility-high-contrast body {
+  background: #000 !important;
+  color: #fff !important;
+}
+
+/* Keep all major content readable */
+html.accessibility-high-contrast main,
+html.accessibility-high-contrast section,
+html.accessibility-high-contrast article,
+html.accessibility-high-contrast header,
+html.accessibility-high-contrast footer,
+html.accessibility-high-contrast nav,
+html.accessibility-high-contrast aside,
+html.accessibility-high-contrast [class*="bg-white"],
+html.accessibility-high-contrast [class*="bg-slate-50"],
+html.accessibility-high-contrast [class*="bg-blue-50"],
+html.accessibility-high-contrast [class*="bg-blue-100"] {
+  background-color: #000 !important;
+  color: #fff !important;
+  border-color: #fff !important;
+}
+
+/* Override text colors that become unreadable */
+html.accessibility-high-contrast h1,
+html.accessibility-high-contrast h2,
+html.accessibility-high-contrast h3,
+html.accessibility-high-contrast h4,
+html.accessibility-high-contrast p,
+html.accessibility-high-contrast span,
+html.accessibility-high-contrast label,
+html.accessibility-high-contrast li,
+html.accessibility-high-contrast div {
+  color: #fff !important;
+}
+
+/* Links remain easy to identify */
+html.accessibility-high-contrast a {
+  color: #ffeb3b !important;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* Buttons stay readable */
+html.accessibility-high-contrast button {
+  background-color: #000 !important;
+  color: #fff !important;
+  border: 2px solid #fff !important;
+}
+
+/* Inputs and selectors */
+html.accessibility-high-contrast input,
+html.accessibility-high-contrast textarea,
+html.accessibility-high-contrast select {
+  background-color: #000 !important;
+  color: #fff !important;
+  border: 2px solid #fff !important;
+}
+
+/* Selected controls remain visibly selected */
+html.accessibility-high-contrast button[aria-pressed="true"],
+html.accessibility-high-contrast button[aria-selected="true"] {
+  background-color: #ffeb3b !important;
+  color: #000 !important;
+  border: 3px solid #fff !important;
+}
+
+/* Focus indicator */
+html.accessibility-high-contrast :focus-visible {
+  outline: 3px solid #ffeb3b !important;
+  outline-offset: 4px !important;
+}
+/* HIGH CONTRAST: FIX ICON BACKGROUNDS AND NAVIGATION */
+
+html.accessibility-high-contrast [class*="bg-blue-100"],
+html.accessibility-high-contrast [class*="bg-blue-50"],
+html.accessibility-high-contrast [class*="bg-indigo-100"],
+html.accessibility-high-contrast [class*="bg-indigo-50"] {
+  background: #000 !important;
+  border: 1px solid #fff !important;
+}
+
+/* Make icons visible */
+html.accessibility-high-contrast svg {
+  color: #ffeb3b !important;
+}
+
+/* Keep the brand mark visible */
+html.accessibility-high-contrast .brand-mark {
+  background: #000 !important;
+  border: 2px solid #fff !important;
+}
+
+/* Improve the accessibility settings navigation button */
+html.accessibility-high-contrast .nav-settings {
+  background: #000 !important;
+  color: #ffeb3b !important;
+  border: 2px solid #fff !important;
+}
+
+/* Make selected options readable */
+html.accessibility-high-contrast button[aria-pressed="true"] {
+  background: #ffeb3b !important;
+  color: #000 !important;
+  border: 3px solid #fff !important;
+}
+
+html.accessibility-high-contrast button[aria-pressed="true"] * {
+  color: #000 !important;
+}
+
+/* Keep keyboard focus obvious */
+html.accessibility-high-contrast :focus-visible {
+  outline: 3px solid #ffeb3b !important;
+  outline-offset: 4px !important;
+}
+/* ACCESSLEARN: ACCESSIBILITY SETTINGS CONTRAST FIX */
+
+html.accessibility-high-contrast body {
+  background: #000 !important;
+  color: #fff !important;
+}
+
+/* Settings cards and panels */
+html.accessibility-high-contrast main section,
+html.accessibility-high-contrast main article {
+  background: #000 !important;
+  color: #fff !important;
+  border-color: #fff !important;
+}
+
+/* Prevent white text on white backgrounds */
+html.accessibility-high-contrast main section *,
+html.accessibility-high-contrast main article * {
+  color: #fff !important;
+}
+
+/* Headings and descriptions */
+html.accessibility-high-contrast h1,
+html.accessibility-high-contrast h2,
+html.accessibility-high-contrast h3,
+html.accessibility-high-contrast p,
+html.accessibility-high-contrast label {
+  color: #fff !important;
+}
+
+/* Dropdowns */
+html.accessibility-high-contrast select {
+  background: #000 !important;
+  color: #fff !important;
+  border: 2px solid #fff !important;
+}
+
+/* Checkboxes */
+html.accessibility-high-contrast input[type="checkbox"] {
+  accent-color: #ffeb3b !important;
+  outline: 1px solid #fff;
+}
+
+/* Reset and other buttons */
+html.accessibility-high-contrast button {
+  background: #000 !important;
+  color: #fff !important;
+  border: 2px solid #fff !important;
+}
+
+/* Clearly indicate selected options */
+html.accessibility-high-contrast button[aria-pressed="true"] {
+  background: #ffeb3b !important;
+  color: #000 !important;
+  border: 3px solid #fff !important;
+}
+
+html.accessibility-high-contrast button[aria-pressed="true"] * {
+  color: #000 !important;
+}
+
+/* Links and keyboard focus */
+html.accessibility-high-contrast a {
+  color: #ffeb3b !important;
+  text-decoration: underline;
+}
+
+html.accessibility-high-contrast :focus-visible {
+  outline: 3px solid #ffeb3b !important;
+  outline-offset: 4px !important;
+}
+/* =========================================
+   ACCESSLEARN — FINAL HIGH CONTRAST OVERRIDE
+   ========================================= */
+
+html.accessibility-high-contrast {
+  color-scheme: dark;
+}
+
+html.accessibility-high-contrast body {
+  background: #000 !important;
+  color: #fff !important;
+}
+
+/* Remove light card backgrounds */
+html.accessibility-high-contrast body [class*="bg-white"],
+html.accessibility-high-contrast body [class*="bg-slate-50"],
+html.accessibility-high-contrast body [class*="bg-blue-50"],
+html.accessibility-high-contrast body [class*="bg-blue-100"],
+html.accessibility-high-contrast body [class*="bg-indigo-50"],
+html.accessibility-high-contrast body [class*="bg-indigo-100"] {
+  background-color: #000 !important;
+  color: #fff !important;
+  border-color: #fff !important;
+}
+
+/* Readable text */
+html.accessibility-high-contrast body h1,
+html.accessibility-high-contrast body h2,
+html.accessibility-high-contrast body h3,
+html.accessibility-high-contrast body h4,
+html.accessibility-high-contrast body p,
+html.accessibility-high-contrast body span,
+html.accessibility-high-contrast body label,
+html.accessibility-high-contrast body li,
+html.accessibility-high-contrast body strong {
+  color: #fff !important;
+}
+
+/* Visible icons */
+html.accessibility-high-contrast body svg {
+  color: #ffeb3b !important;
+}
+
+/* Buttons and controls */
+html.accessibility-high-contrast body button,
+html.accessibility-high-contrast body select,
+html.accessibility-high-contrast body input:not([type="checkbox"]),
+html.accessibility-high-contrast body textarea {
+  background-color: #000 !important;
+  color: #fff !important;
+  border: 2px solid #fff !important;
+}
+
+/* Selected learning-format cards */
+html.accessibility-high-contrast body button[aria-pressed="true"] {
+  background-color: #ffeb3b !important;
+  color: #000 !important;
+  border: 3px solid #fff !important;
+}
+
+html.accessibility-high-contrast body button[aria-pressed="true"] * {
+  color: #000 !important;
+}
+
+/* Checkboxes */
+html.accessibility-high-contrast body input[type="checkbox"] {
+  accent-color: #ffeb3b !important;
+}
+
+/* Links */
+html.accessibility-high-contrast body a {
+  color: #ffeb3b !important;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* Keyboard focus */
+html.accessibility-high-contrast body :focus-visible {
+  outline: 3px solid #ffeb3b !important;
+  outline-offset: 4px !important;
+}
+/* ACCESSLEARN: HOMEPAGE HIGH-CONTRAST FIX */
+
+/* Main preview card */
+html.accessibility-high-contrast .lesson-preview {
+  background: #000 !important;
+  color: #fff !important;
+  border: 2px solid #fff !important;
+}
+
+/* Fraction illustration panel */
+html.accessibility-high-contrast .preview-illustration {
+  background: #000 !important;
+  color: #fff !important;
+  border: 2px solid #fff !important;
+}
+
+/* Preview headings and supporting text */
+html.accessibility-high-contrast .preview-label,
+html.accessibility-high-contrast .preview-number,
+html.accessibility-high-contrast .visual-overline,
+html.accessibility-high-contrast .visual-title,
+html.accessibility-high-contrast .visual-caption,
+html.accessibility-high-contrast .preview-bottom {
+  color: #fff !important;
+}
+
+/* Keep the fraction diagram distinguishable */
+html.accessibility-high-contrast .fraction-circle {
+  background: #000 !important;
+  border-color: #ffeb3b !important;
+}
+
+html.accessibility-high-contrast .fraction-half {
+  background: #ffeb3b !important;
+}
+
+html.accessibility-high-contrast .fraction-circle::after {
+  background: #fff !important;
+}
+
+/* Remove pale icon backgrounds */
+html.accessibility-high-contrast .brand-mark,
+html.accessibility-high-contrast .preview-bottom > *,
+html.accessibility-high-contrast .hero .rounded-xl {
+  background: #000 !important;
+  color: #ffeb3b !important;
+  border-color: #fff !important;
+}
+
+/* Preserve readable hero text */
+html.accessibility-high-contrast .hero h1,
+html.accessibility-high-contrast .hero-description,
+html.accessibility-high-contrast .hero-note {
+  color: #fff !important;
+}
+
+/* Make the secondary hero action readable */
+html.accessibility-high-contrast .hero-actions .button-secondary {
+  background: #000 !important;
+  color: #ffeb3b !important;
+  border: 2px solid #fff !important;
+}
